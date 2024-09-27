@@ -1,5 +1,5 @@
-gymnasium=0.29.1
-gym-anytrading=2.0.0
-matplotlib=3.8.4
-torch=2.4.0
-numpy=1.26.4
+gymnasium==0.29.1
+gym-anytrading==2.0.0
+matplotlib==3.8.4
+torch==2.4.0
+numpy==1.26.4

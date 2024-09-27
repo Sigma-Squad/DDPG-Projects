@@ -6,5 +6,6 @@ This repository is a collaborative effort where we explore the capabilities of a
 
 **Install Dependencies**
 
-   ```bash
-   pip -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
