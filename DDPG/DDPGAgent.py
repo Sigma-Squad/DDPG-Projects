@@ -49,7 +49,7 @@ class ReplayBuffer:
 
 
 class DDPGAgent:
-    def __init__(self, state_dim, hidden_dim, action_dim, replay_buffer_size=1e6, gamma=0.99, tau=0.001, batch_size=8):
+    def __init__(self, state_dim, hidden_dim, action_dim, replay_buffer_size=5e4, gamma=0.98, tau=0.005, batch_size=64):
         self.state_dim = state_dim
         self.action_dim = action_dim
         self.replay_buffer = ReplayBuffer(replay_buffer_size)
@@ -90,7 +90,6 @@ class DDPGAgent:
 
         y_Q = torch.add(rewards, self.gamma *
                         self.target_critic(next_states, self.target_actor(next_states)))
-
         critic_loss = nn.MSELoss()(y_Q, self.critic(states, actions))
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
